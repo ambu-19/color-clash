@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101115"><meta name="description" content="A quick-fire color game for friends. Make a room, share the code, and clash!">
+  <title>Color Clash — Quick color. Big bragging rights.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Color Clash home"><span class="brand-icon"><i></i><i></i><i></i><i></i></span><span>color<span class="brand-light">clash</span></span></a>
+    <div class="top-note"><span class="live-dot"></span> FRIENDS. COLORS. MAYHEM.</div>
+  </header>
+  <main id="app">
+    <section id="home" class="screen home-screen">
+      <div class="hero-copy"><div class="eyebrow"><span class="spark">✳</span> THE QUICK-FIRE COLOR GAME</div>
+        <h1>Quick color.<br><span class="gradient-text">Big bragging rights.</span></h1>
+        <p class="hero-sub">See it. Tap it. Beat your friends to ten.<br>A tiny game with a very real winner.</p>
+      </div>
+      <div class="preview-card" aria-hidden="true"><div class="preview-top"><span>ROUND 04</span><span class="preview-live"><i></i> LIVE</span></div><div class="preview-prompt">TAP THIS COLOR</div><div class="preview-swatch"></div><div class="preview-color">PURPLE</div><div class="preview-pips"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="float-chip chip-one">⚡ lightning fast</span><span class="float-chip chip-two">✦ 3 friends playing</span></div>
+      <div class="join-card"><label class="field-label" for="player-name">YOUR NAME</label><input id="player-name" maxlength="18" placeholder="What should we call you?" autocomplete="nickname">
+        <div class="join-actions"><button id="create-button" class="button button-primary"><span>Create a room</span><span class="button-arrow">↗</span></button><div class="or"><span></span> OR <span></span></div><div class="join-row"><input id="room-code-input" class="code-input" maxlength="6" placeholder="ROOM CODE" aria-label="Room code"><button id="join-button" class="button button-secondary">Join room <span>→</span></button></div></div><div id="home-error" class="error-message" role="alert"></div>
+      </div>
+      <div class="feature-row"><div><span class="feature-icon">♟</span> 2–6 PLAYERS</div><i></i><div><span class="feature-icon">◷</span> 2 MIN TO PLAY</div><i></i><div><span class="feature-icon">♡</span> NO SIGN-UP</div></div>
+    </section>
+
+    <section id="room" class="screen room-screen hidden">
+      <div class="room-header"><button id="leave-button" class="back-button" aria-label="Leave room">←</button><div><div class="eyebrow"><span class="live-dot"></span> COLOR CLASH ROOM</div><h1 id="room-title">Waiting room</h1></div><div class="room-code-box"><span>ROOM CODE</span><button id="copy-code" title="Copy room code"><b id="room-code">------</b><span>▣</span></button></div></div>
+      <div class="game-layout"><section class="game-main">
+        <div id="lobby-panel" class="panel lobby-panel"><div class="panel-heading"><div><span class="eyebrow">THE LINEUP</span><h2>Waiting for your crew</h2></div><span id="player-count" class="count-pill">1 / 6</span></div><p class="muted">Send your room code to friends. The game starts when two or more are here.</p><div id="player-list" class="player-list"></div><div class="lobby-footer"><span id="lobby-hint">You’re the host. Start when everyone’s in.</span><button id="start-button" class="button button-primary" disabled>Start game <span>→</span></button></div></div>
+        <div id="play-panel" class="panel play-panel hidden"><div class="play-meta"><span id="round-label" class="eyebrow">ROUND 1</span><span id="status-pill" class="status-pill"><i></i> READY?</span></div><div class="target-label">FIND THIS COLOR</div><div id="target-swatch" class="target-swatch"></div><h2 id="target-name">Get ready</h2><p id="round-message" class="muted">Tap the matching color as fast as you can.</p><div id="palette" class="palette"></div></div>
+        <div id="finished-panel" class="panel finished-panel hidden"><div class="trophy">✦</div><div class="eyebrow">GAME OVER</div><h2><span id="winner-name">Champion</span><br>takes the crown.</h2><p class="muted">Ten points. One very fast friend.</p><button id="replay-button" class="button button-primary">Play again <span>↻</span></button><div id="replay-hint" class="replay-hint"></div></div>
+      </section><aside class="panel scoreboard"><div class="score-head"><div><span class="eyebrow">THE SCOREBOARD</span><h2>First to 10</h2></div><span class="trophy-mini">✦</span></div><div id="score-list" class="score-list"></div><div class="score-foot"><span>🏁</span> First to 10 points wins</div></aside></div>
+      <div class="room-bottom"><span><i class="live-dot"></i> LIVE ROOM</span><span id="connection-status">Connecting…</span><button id="share-button">↗ Share invite</button></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body></html>

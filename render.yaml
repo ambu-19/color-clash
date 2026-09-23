@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: color-clash
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
